@@ -398,12 +398,22 @@ export default function DashboardClient({ transactions, goals, categories, userI
         </div>
 
         <div className="tab-bar">
-          {tabs.map(tab => (
-            <div key={tab.id} className="tab-item" onClick={() => setActiveTab(tab.id)}>
-              <span style={{ fontSize: 20, color: activeTab === tab.id ? '#7C6FF7' : '#2A2A2E' }}>{tab.emoji}</span>
-              <span className="tab-label" style={{ color: activeTab === tab.id ? '#7C6FF7' : '#2A2A2E' }}>{tab.label}</span>
-            </div>
-          ))}
+          <a href="/dashboard" className="tab-item" style={{ textDecoration: 'none' }}>
+            <span style={{ fontSize: 20, color: '#7C6FF7' }}>⊞</span>
+            <span className="tab-label" style={{ color: '#7C6FF7' }}>Home</span>
+          </a>
+          <a href="/transactions" className="tab-item" style={{ textDecoration: 'none' }}>
+            <span style={{ fontSize: 20, color: '#2A2A2E' }}>⇅</span>
+            <span className="tab-label" style={{ color: '#2A2A2E' }}>Transactions</span>
+          </a>
+          <a href="/goals" className="tab-item" style={{ textDecoration: 'none' }}>
+            <span style={{ fontSize: 20, color: '#2A2A2E' }}>◎</span>
+            <span className="tab-label" style={{ color: '#2A2A2E' }}>Goals</span>
+          </a>
+          <div className="tab-item">
+            <span style={{ fontSize: 20, color: '#2A2A2E' }}>○</span>
+            <span className="tab-label" style={{ color: '#2A2A2E' }}>Profile</span>
+          </div>
         </div>
 
         {showAdd && (
